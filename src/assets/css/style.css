@@ -1,4 +1,4 @@
-/*Fonts Family*/
+/*Fonts Family*/popup
 /*Colors*/
 /*Basic settings*/
 html {
@@ -62,7 +62,7 @@ textarea:focus {
   margin-bottom: 2rem;
   text-align: center;
   border-radius: 1rem;
-  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .form_input::-webkit-input-placeholder {
@@ -1063,7 +1063,7 @@ textarea:focus {
 
 .popup_calc_profile_content .label {
   padding: 1.3rem 2rem;
-  z-index: 18rem;
+  z-index: 18;
   color: #000000;
   font-size: 1.5rem;
   font-weight: 500;
