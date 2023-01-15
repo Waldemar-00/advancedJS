@@ -15,7 +15,7 @@ body {
 
 .status {
   display: block;
-  color: red;
+  color: rgb(0, 153, 255);
 }
 
 a:hover {
