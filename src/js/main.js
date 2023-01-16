@@ -4,8 +4,9 @@ import tabs from './modules/tabs';
 import forms from './modules/forms';
 import calculate from './modules/calculate';
 window.addEventListener('DOMContentLoaded', () => {
+    const modalsData = {};
     modals();
     tabs();
     forms();
-    calculate();
+    calculate(modalsData);
 });

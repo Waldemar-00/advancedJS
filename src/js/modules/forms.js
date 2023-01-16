@@ -1,12 +1,8 @@
+import checkNum from "./numFromInputs";
 const formsFn = () => {
     const forms = document.querySelectorAll('form');
     const inputs = document.querySelectorAll('input');
-    const inputsPhone = document.querySelectorAll('input[name="user_phone"]');
-    inputsPhone.forEach((input) => {
-        input.addEventListener('input', () => {
-            input.value = input.value.replace(/\D/, '');
-        });
-    });
+    checkNum('input[name="user_phone"]');
     const messege = {
         loading: "Laoding...",
         success: "We will call YOU soon!",
