@@ -1,5 +1,5 @@
 const tabs = () => {
-    function startTabs(perentSelector, childrenSelector, contentSelector, activeClass) {
+    function startTabs(perentSelector, childrenSelector, contentSelector, activeClass, display = 'block') {
         const container = document.querySelector(perentSelector);
         const tabs = document.querySelectorAll(childrenSelector);
         const content = document.querySelectorAll(contentSelector);
@@ -9,7 +9,7 @@ const tabs = () => {
             tabs.forEach(item => item.classList.remove(activeClass));
         };
         const show = (index = 0) => {
-            content[index].style.display = 'block';
+            content[index].style.display = display;
             tabs[index].classList.add(activeClass);
         };
         hide();
@@ -28,6 +28,7 @@ const tabs = () => {
         });
     }
     startTabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
-    startTabs('.decoration_slider','.no_click', '.decoration_content > div > div', 'after_click');
+    startTabs('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+    startTabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline');
 };
 export default tabs;
