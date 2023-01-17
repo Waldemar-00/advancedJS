@@ -7,6 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const modalsData = {};
     modals();
     tabs();
-    forms();
+    forms(modalsData);
     calculate(modalsData);
 });

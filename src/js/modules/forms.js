@@ -1,11 +1,11 @@
 import checkNum from "./numFromInputs";
-const formsFn = () => {
+const formsFn = (modalsData) => {
     const forms = document.querySelectorAll('form');
     const inputs = document.querySelectorAll('input');
     checkNum('input[name="user_phone"]');
     const messege = {
         loading: "Laoding...",
-        success: "We will call YOU soon!",
+        success: "Wait for our call!",
         failure: "Somesing's wrong!",
     };
     const clearInputs = () => {
@@ -36,6 +36,11 @@ const formsFn = () => {
             messegeBox.classList.add('status');
             form.appendChild(messegeBox);
             const formData = new FormData(form);
+            if (form.getAttribute('data-calc') === "submit") {
+                for (let key in modalsData) {
+                    formData.append(key, modalsData[key]);
+                }
+            }
             postData(url, formData)
                 .then(response => {
                 console.log(response);
@@ -44,7 +49,15 @@ const formsFn = () => {
                 .catch(() => messegeBox.textContent = messege.failure)
                 .finally(() => {
                     clearInputs();
-                    setTimeout(() => messegeBox.remove(), 5000);
+                    setTimeout(() => {
+                        messegeBox.remove();
+                        const mainForms = document.querySelectorAll('.main_form');
+                        mainForms.forEach(form => form.style.display = 'none');
+                        const close = document.querySelectorAll('[data-closePopup]');
+                        close.forEach(popup => popup.style.display = 'none');
+                        document.body.style.overflow = 'visible';
+                    }, 4000);
+
                 });
         });
     });

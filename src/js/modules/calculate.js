@@ -9,7 +9,6 @@ const calculate = (modalData) => {
     reset.style.cursor = 'pointer';
     modalData.windowType = 0;
     modalData.material = 'tree';
-    console.log(modalData);
     const addProperty = (event, elements, property) => {
         elements.forEach((element, index) => {
             element.addEventListener(event, () => {
