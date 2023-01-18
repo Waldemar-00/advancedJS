@@ -4,9 +4,11 @@ import tabs from './modules/tabs';
 import forms from './modules/forms';
 import calculate from './modules/calculate';
 import timer from './modules/timer';
+import show from './modules/showBigImg';
 window.addEventListener('DOMContentLoaded', () => {
     const modalsData = {};
     const data = '2023-03-21 GMT+0300';
+    show();
     modals();
     tabs();
     forms(modalsData);

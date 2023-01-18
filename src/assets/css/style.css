@@ -1,4 +1,4 @@
-/*Fonts Family*/popup
+/*Fonts Family*/
 /*Colors*/
 /*Basic settings*/
 html {
@@ -829,7 +829,8 @@ textarea:focus {
 /*Modals*/
 .popup,
 .popup_engineer,
-.popup_calc_end {
+.popup_calc_end,
+.popup_big {
   display: none;
   position: fixed;
   top: 0;
