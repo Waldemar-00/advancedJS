@@ -1,9 +1,9 @@
-import { showModalByTime } from "./modals";
-let flag = true;
+import { showModalByTime, flag } from "./modals";
+let flagBig = true;
 const show = () => {
     const parentBlock = document.querySelector('.works');
     const imgPopup = document.createElement('div');
-    imgPopup.classList.add('popup_big');
+    imgPopup.classList.add('popup_big', 'faded');
     parentBlock.append(imgPopup);
     const bigImg = document.createElement('img');
     imgPopup.append(bigImg);
@@ -20,20 +20,20 @@ const show = () => {
             bigImg.style.width = '720px';
             bigImg.style.height = '680px';
             document.body.style.overflow = 'hidden';
-            flag = false;
+            flagBig = false;
         }
         if (eT && eT.matches('div.popup_big')) {
             imgPopup.style.display = 'none';
-            document.body.style.overflow = 'visible';
-            flag = true;
+            document.body.style.overflow = 'overlay';
+            flagBig = true;
         }
     });
     setTimeout(() => {
-        if (flag) {
+        if (flag && flagBig) {
             showModalByTime('.popup');
         } else {
             return;
         }
-    }, 60000);
+    }, 3000);
 };
 export default show;

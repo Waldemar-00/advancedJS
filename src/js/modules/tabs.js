@@ -10,6 +10,7 @@ const tabs = () => {
         };
         const show = (index = 0) => {
             content[index].style.display = display;
+            content[index].classList.add('faded');
             tabs[index].classList.add(activeClass);
         };
         hide();

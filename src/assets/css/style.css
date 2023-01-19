@@ -840,7 +840,18 @@ textarea:focus {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+.faded {
+  animation-name: faded;
+  animation-duration: 1.2s;
+}
+@keyframes faded {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+}
 .myimage {
   position: fixed;
   top: 0;

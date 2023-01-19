@@ -1,26 +1,29 @@
 import { setTimeout } from "core-js";
 import e from "cors";
-
+let  flag = true;
 const modals = () => {
     function bindModal(openSelector, modalSelector, closeSelector, closeTrigger = true) {
         const open = document.querySelectorAll(openSelector);
         const modal = document.querySelector(modalSelector);
         const close = document.querySelector(closeSelector);
         const popups = document.querySelectorAll('[data-closePopup]');
-
         open.forEach(elem => elem.addEventListener('click', (e) => {
             if (e.target) {
                 e.preventDefault();
             }
             popups.forEach(popup => popup.style.display = 'none');
+
                 modal.style.display = 'block'; //! inline
+                modal.classList.add('faded');
                 document.body.style.overflow = 'hidden';
+                flag = false;
                 //? document.body.classList.add('modal-open'); // !bootstrap
         }));
-        close.addEventListener('click', (e) => {
+        close.addEventListener('click', () => {
             popups.forEach(popup => popup.style.display = 'none');
             modal.style.display = 'none';  //! inline
-            document.body.style.overflow = '';
+            document.body.style.overflow = 'overlay';
+            flag = true;
             //? document.body.classList.remove('modal-open'); // !bootstrap
 
         });
@@ -28,7 +31,8 @@ const modals = () => {
             if (e.target === modal && closeTrigger) {
                 popups.forEach(popup => popup.style.display = 'none');
                 modal.style.display = 'none';  //! inline
-                document.body.style.overflow = '';
+                document.body.style.overflow = 'overlay';
+                flag = true;
                 //?document.body.classList.remove('modal-open'); // !bootstrap
             }
         });
@@ -44,5 +48,6 @@ function showModalByTime(selector) {
     document.querySelector(selector).style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
-export {showModalByTime} ;
+
+export { showModalByTime, flag } ;
 export default modals;
