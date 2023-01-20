@@ -24,7 +24,12 @@ const show = () => {
         }
         if (eT && eT.matches('div.popup_big')) {
             imgPopup.style.display = 'none';
-            document.body.style.overflow = 'overlay';
+            if (navigator.userAgent.match('Firefox') ||
+                (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor))) {
+                document.body.style.overflow = '';
+            } else {
+                document.body.style.overflow = 'overlay';
+                }
             flagBig = true;
         }
     });

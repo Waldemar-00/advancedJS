@@ -22,7 +22,12 @@ const modals = () => {
         close.addEventListener('click', () => {
             popups.forEach(popup => popup.style.display = 'none');
             modal.style.display = 'none';  //! inline
-            document.body.style.overflow = 'overlay';
+            if (navigator.userAgent.match('Firefox') ||
+                (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor))) {
+                document.body.style.overflow = '';
+            } else {
+                document.body.style.overflow = 'overlay';
+            }
             flag = true;
             //? document.body.classList.remove('modal-open'); // !bootstrap
 
@@ -31,7 +36,12 @@ const modals = () => {
             if (e.target === modal && closeTrigger) {
                 popups.forEach(popup => popup.style.display = 'none');
                 modal.style.display = 'none';  //! inline
-                document.body.style.overflow = 'overlay';
+                if (navigator.userAgent.match('Firefox') ||
+                    (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor))) {
+                    document.body.style.overflow = '';
+                } else {
+                    document.body.style.overflow = 'overlay';
+                }
                 flag = true;
                 //?document.body.classList.remove('modal-open'); // !bootstrap
             }
