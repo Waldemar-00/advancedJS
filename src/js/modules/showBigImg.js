@@ -34,6 +34,6 @@ const show = () => {
         } else {
             return;
         }
-    }, 3000);
+    }, 60000);
 };
 export default show;
