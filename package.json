@@ -262,7 +262,7 @@
     "emojis-list": "^3.0.0",
     "encodeurl": "^1.0.2",
     "end-of-stream": "^1.4.4",
-    "engine.io": "^6.2.1",
+    "engine.io": "^6.4.2",
     "engine.io-client": "^6.2.3",
     "engine.io-parser": "^5.0.4",
     "enhanced-resolve": "^4.1.1",
