@@ -676,7 +676,7 @@
     "socket.io": "^4.5.4",
     "socket.io-adapter": "^2.4.0",
     "socket.io-client": "^4.5.4",
-    "socket.io-parser": "^4.2.1",
+    "socket.io-parser": "^4.2.3",
     "sort-keys": "^1.1.2",
     "source-list-map": "^2.0.1",
     "source-map": "^0.5.7",
